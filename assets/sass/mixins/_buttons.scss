@@ -1,0 +1,18 @@
+@mixin button($color,$bg-color,$side1,$side2,$radius : 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $color;
+          transition: 0.7s background ease;
+          background-color: $bg-color;
+          text-decoration: none;
+          padding: $side1 $side2;
+          &:hover{
+            background-color:darken($bg-color, 10%);
+          }
+}

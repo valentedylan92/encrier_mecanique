@@ -1,0 +1,8 @@
+.twitch-container{
+    margin-right: 100px;
+    width: 0;
+    transition: width .5s;
+    &.active{
+        width: 600px;
+    }
+}

@@ -1,0 +1,27 @@
+$pixel: .0625em ;
+$screens: (
+    "sm" : ( min: 0, max   : 48em - $pixel), //0px -> 767px
+    "md" : ( min: 48em, max: 64em - $pixel), // 768px -> 1023px
+    "lg" : ( min: 64em, max: 75em - $pixel), // 1024px -> 1199px
+    "xl" : ( min: 75em, max: 100em - $pixel) // 1200px-> 1599px
+) ;
+
+// BREAKPOINTS
+
+$breakpoints: (
+    "small"        : new-breakpoint(min-width get($screens, sm, min) max-width get($screens, sm, max)),
+    "medium"       : new-breakpoint(min-width get($screens, md, min) max-width get($screens, md, max)),
+    "large"        : new-breakpoint(min-width get($screens, lg, min)),
+    "xlarge"       : new-breakpoint(min-width get($screens, xl, min)),
+    "small-medium" : new-breakpoint(min-width get($screens, sm, min) max-width get($screens, md, max)),
+    "medium-large" : new-breakpoint(min-width get($screens, md, min)),
+    "large-only"   : new-breakpoint(min-width get($screens, lg, min) max-width get($screens, lg, max))
+);
+
+
+$colors: (
+    "primary"    : #ffffff,
+    "secondary"  : #6441a5,
+    "tertiary"   : #22c2d0,
+    "font"       : #000000,
+);

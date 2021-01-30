@@ -1,0 +1,247 @@
+body{
+  // background-color: get($colors,secondary);
+    background: #6441a5 ;
+    // background: linear-gradient(270deg, #f6529b, #f65252, #f69c52, #e4f652, #52f658, #52b4f6, #6441a5, #f6529b);
+
+    // background-size: 1600% 1600%;
+
+  // -webkit-animation: AnimationName 1200s ease infinite;
+  // -moz-animation: AnimationName 1200s ease infinite;
+  // -o-animation: AnimationName 1200s ease infinite;
+  // animation: AnimationName 1200s ease infinite;
+
+@-webkit-keyframes AnimationName {
+  0%{background: #f6529b }
+  12%{background: #f65252 }
+  25%{background: #f69c52 }
+  37%{background: #e4f652 }
+  50%{background: #52f658 }
+  62%{background: #52b4f6 }
+  75%{background: #3530b3 }
+  87%{background: #6441a5 }
+  100%{background: #f6529b}
+
+
+}
+@-moz-keyframes AnimationName {
+  0%{background: #f6529b }
+  12%{background: #f65252 }
+  25%{background: #f69c52 }
+  37%{background: #e4f652 }
+  50%{background: #52f658 }
+  62%{background: #52b4f6 }
+  75%{background: #3530b3 }
+  87%{background: #6441a5 }
+  100%{background: #f6529b}
+}
+@-o-keyframes AnimationName {
+  0%{background: #f6529b }
+  12%{background: #f65252 }
+  25%{background: #f69c52 }
+  37%{background: #e4f652 }
+  50%{background: #52f658 }
+  62%{background: #52b4f6 }
+  75%{background: #3530b3 }
+  87%{background: #6441a5 }
+  100%{background: #f6529b}
+}
+@keyframes AnimationName {
+  0%{background: #f6529b }
+  12%{background: #f65252 }
+  25%{background: #f69c52 }
+  37%{background: #e4f652 }
+  50%{background: #52f658 }
+  62%{background: #52b4f6 }
+  75%{background: #3530b3 }
+  87%{background: #6441a5 }
+  100%{background: #f6529b}
+}
+// @keyframes AnimationName {
+//   0%{background-position:0% 91%}
+//   50%{background-position:100% 10%}
+//   100%{background-position:0% 91%}
+// }
+
+
+  #portrait_container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 5px black solid;
+  }
+  .title{
+    font-family: "Nanum Pen Script", cursive;
+    color: white;
+    font-size: 100px;
+    margin-bottom: 10px;
+  }
+  #fond_color{
+    width: 500px;
+    height: 500px;
+    background: #F6529B;
+    // background: linear-gradient(270deg, #f6529b, #f65252, #f69c52, #e4f652, #52f658, #52b4f6, #6441a5, #f6529b);
+    background-size: 1600% 1600%;
+    -webkit-animation: AnimationName 900s ease infinite;
+    -moz-animation: AnimationName 900s ease infinite;
+    -o-animation: AnimationName 900s ease infinite;
+    animation: AnimationName 900s ease infinite;
+
+  }
+
+  .empty{
+    width: 500px;
+    height: 500px;
+  }
+  .portrait{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .image_container{
+    display: flex;
+    flex-direction: row;
+    // position: relative;
+  }
+
+  .arrow-l{
+    position: absolute;
+
+    bottom: 200px;
+    left: -90px;
+
+  }
+
+  .arrow-r{
+    position: absolute;
+
+    bottom: 200px;
+    right: -90px;
+
+  }
+
+  .container {
+    height: 100vh;
+    width: 100%;
+    @include center-flex();
+    flex-direction: column;
+  }
+
+
+  .button{
+    @include square(50px);
+  
+    background-color: transparent;
+    color:get($colors,primary);
+    display: block;
+    border-radius: 100%;
+    box-sizing: border-box;
+    padding: 4px 0 0 2px;
+    font-size: 25px;
+  
+    // color: white;
+    @include flex($justify :center, $align:center);
+    text-decoration: none;
+    &-container{
+      @include flex($justify :space-around, $align:center);
+      padding-top: 20px;
+      width: 200px;
+    }
+    &.active{
+      background-color: get($colors,primary);
+      color:get($colors,secondary);
+    }
+  }
+}
+
+#input_color{
+  width: 30px;
+  height: 34px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#canvas{
+  display: none;
+}
+
+#downloadImg{
+  cursor:pointer;
+}
+
+
+.control_link{
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 150px;
+  background: white;
+  margin: 0 10px;
+  box-sizing: border-box;
+  @include flex($align:center,$justify:center);
+  img{
+    width: 40px;
+  }
+  &.off{
+    border: 5px solid #441129;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 43%;
+        left: 0;
+        width: 104%;
+        height: 7px;
+        background: #441129;
+        transform: rotate(-127deg);
+    }
+  }
+}
+.control{
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 150px;
+  background: white;
+  margin: 0 10px;
+  box-sizing: border-box;
+  @include flex($align:center,$justify:center);
+  img{
+    width: 40px;
+  }
+  &.is-active{
+    background: #F6529B;
+  }
+
+  &__container{
+    width: 500px;
+    margin-bottom: 25px;
+    @include flex($align:center,$justify:center)
+  }
+
+  &__content{
+    width: 100%;
+    @include flex($align:center,$justify:space-around)
+  }
+}
+
+.hair{
+  position: absolute;
+  &.is-active{
+    display:none;
+  }
+}
+
+#control_hair{
+  position: absolute;
+  display: none;
+  top: 0px;
+  right: -110px;
+  &.is-active{
+    display: flex;
+  }
+}

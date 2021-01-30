@@ -1,0 +1,6 @@
+@mixin media($media){
+    $media-query: get($breakpoints, $media);
+    @media #{$media-query}{
+        @content;
+    }
+}

@@ -1,0 +1,45 @@
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+
+@function map-deep-get($map, $keys...){
+    $value: $map;
+    @each $key in $keys{
+        $value: map-get($value, $key);
+    }
+    @return $value;
+}
+
+@function get($map, $key, $nested-key: null){
+    @if $nested-key != null{
+        $v: map-deep-get($map, $key, $nested-key);
+        @return $v;
+    } @else{
+        $v: map-get($map, $key);
+        @return $v;
+    }
+};
+
+@function new-breakpoint($query: $feature $value){
+    $default-feature: min-width;
+    $media-query: 'screen and ';
+    $loop: length($query);
+
+    @if $loop == 1{
+        $media-query: $media-query + '(' + $default-feature + ': ' + nth($query, 1) + ')';
+    } @else {
+        $i: 1;
+        @if $loop % 2 != 0{
+            $loop: $loop - 1;
+        }
+        @while $i <= $loop{
+            $media-query: $media-query + '(' + nth($query, $i) + ': ' + nth($query, $i + 1) + ')';
+            $i: $i + 2;
+            @if $i < $loop{
+                $media-query: $media-query + ' and ';
+            }
+        }
+    }
+    @return $media-query;
+}
