@@ -1,0 +1,86 @@
+.arrow{
+    position: absolute;
+    bottom: 200px;
+    &-l{
+        left: -90px;
+      }
+    &-r{
+        right: -90px;
+      }
+  }
+
+  
+#control_hair{
+    position: absolute;
+    display: none;
+    top: 0px;
+    right: -110px;
+    &.is-active{
+      display: flex;
+    }
+  }
+
+
+  #input_color{
+    width: 30px;
+    height: 34px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .control_link{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 150px;
+    background: white;
+    margin: 0 10px;
+    box-sizing: border-box;
+    @include flex($align:center,$justify:center);
+    img{
+      width: 40px;
+    }
+    &.off{
+      border: 5px solid #441129;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 43%;
+          left: 0;
+          width: 104%;
+          height: 7px;
+          background: #441129;
+          transform: rotate(-127deg);
+      }
+    }
+  }
+
+  .control{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 150px;
+    background: white;
+    margin: 0 10px;
+    box-sizing: border-box;
+    @include flex($align:center,$justify:center);
+    img{
+      width: 40px;
+    }
+    &.is-active{
+      background: #F6529B;
+    }
+  
+    &__container{
+      width: 500px;
+      margin-bottom: 25px;
+      @include flex($align:center,$justify:center)
+    }
+  
+    &__content{
+      width: 100%;
+      @include flex($align:center,$justify:space-around)
+    }
+  }
