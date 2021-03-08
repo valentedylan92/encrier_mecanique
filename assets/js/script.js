@@ -195,6 +195,12 @@ function clickSlider(directionSlider){
             limiteData= container.dataset.container;
             position = container.dataset.position;
             break;
+        case 'accessoire-2':
+                targetAnimation = '#img_accessoire-2';
+                container = document.getElementById("img_accessoire-2");
+                limiteData= container.dataset.container;
+                position = container.dataset.position;
+                break;
         case 'haut':
             targetAnimation = '#img_haut';
             container= document.getElementById("img_haut");
